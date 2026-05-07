@@ -185,21 +185,21 @@ export default function Queue() {
             const cat = getCategory(r.category);
             const pct = slaPct(r.elapsedHours, r.slaHours);
             return (
-              <li key={r.id} className="p-4">
-                <div className="flex items-start justify-between gap-4">
+              <li key={r.id} className="p-4 hover:bg-mist/30 transition">
+                <Link href={`/staff/queue/${r.id}`} className="flex items-start justify-between gap-4 group">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-[10px] text-muted">{r.id}</span>
                       <StatusPill status={r.status} />
                       <PriorityPill priority={r.priority} />
                     </div>
-                    <div className="font-display font-semibold text-[15px] text-navy-900 mt-1 truncate">{r.title}</div>
+                    <div className="font-display font-semibold text-[15px] text-navy-900 mt-1 truncate group-active:text-navy-700">{r.title}</div>
                     <div className="text-[12px] text-muted mt-1 flex items-center gap-1.5"><cat.icon className="w-3.5 h-3.5" /> {cat.short}</div>
                   </div>
                   <div className="text-right shrink-0">
                     <SlaRing elapsed={r.elapsedHours} total={r.slaHours} size={42} />
                   </div>
-                </div>
+                </Link>
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-mist">
                   <div className="text-[11px] text-muted">
                     Submitted {fmt(r.createdAt)}
