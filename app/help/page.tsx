@@ -22,7 +22,7 @@ export default function HelpPage() {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<string | null>(null);
 
-  const filteredFaqs = FAQS.filter(f => 
+  const filteredFaqs = FAQS.filter(f =>
     (activeCat ? f.cat === activeCat : true) &&
     (query ? f.q.toLowerCase().includes(query.toLowerCase()) || f.a.toLowerCase().includes(query.toLowerCase()) : true)
   );
@@ -50,10 +50,10 @@ export default function HelpPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="font-display text-[32px] sm:text-[44px] font-semibold tracking-tight leading-tight">How can we help?</h1>
           <p className="text-white/60 mt-4 text-[15px] sm:text-[17px]">Search our knowledge base or browse categories below</p>
-          
+
           <div className="mt-8 relative max-w-xl mx-auto">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-            <input 
+            <input
               type="text"
               placeholder="Search for articles, topics, keywords..."
               className="w-full h-14 pl-12 pr-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:bg-white/15 focus:border-white/20 transition text-[15px] sm:text-[16px]"
@@ -68,12 +68,11 @@ export default function HelpPage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {CATEGORIES.map(c => (
-            <button 
-              key={c.id} 
+            <button
+              key={c.id}
               onClick={() => setActiveCat(activeCat === c.id ? null : c.id)}
-              className={`p-5 rounded-xl border text-left transition ${
-                activeCat === c.id ? "bg-navy-900 border-navy-900 text-white shadow-xl" : "bg-white border-line text-navy-900 hover:border-navy-200"
-              }`}
+              className={`p-5 rounded-xl border text-left transition ${activeCat === c.id ? "bg-navy-900 border-navy-900 text-white shadow-xl" : "bg-white border-line text-navy-900 hover:border-navy-200"
+                }`}
             >
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4 ${activeCat === c.id ? "bg-white/20" : "bg-navy-50 text-navy-700"}`}>
                 <c.icon className="w-5 h-5" />
@@ -94,7 +93,7 @@ export default function HelpPage() {
               <button onClick={() => setActiveCat(null)} className="text-[12px] font-bold text-navy-700 hover:underline uppercase tracking-wider">Show all</button>
             )}
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredFaqs.length > 0 ? filteredFaqs.map((f, i) => (
               <Card key={i} className="p-5 sm:p-6 hover:shadow-lg transition group">
@@ -109,7 +108,7 @@ export default function HelpPage() {
             )) : (
               <div className="col-span-2 py-12 text-center bg-mist rounded-xl border border-dashed border-line">
                 <p className="text-muted">No matching articles found for "{query}"</p>
-                <button onClick={() => {setQuery(""); setActiveCat(null)}} className="text-navy-900 font-semibold mt-2 hover:underline">Clear all filters</button>
+                <button onClick={() => { setQuery(""); setActiveCat(null) }} className="text-navy-900 font-semibold mt-2 hover:underline">Clear all filters</button>
               </div>
             )}
           </div>
@@ -159,6 +158,7 @@ export default function HelpPage() {
           <p>© 2026 Student Support Services Centre · NUST</p>
           <div className="flex gap-6">
             <Link href="/about" className="hover:text-navy-900 transition">About</Link>
+            <Link href="/docs/flows" className="hover:text-navy-900 transition">Portal Guide</Link>
             <Link href="/" className="hover:text-navy-900 transition">Portal Login</Link>
           </div>
         </div>
