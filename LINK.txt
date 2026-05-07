@@ -1,0 +1,28 @@
+Astrul — S³C Design Competition 2026 · Track 2
+Team Astrul · NUST
+
+LIVE PROTOTYPE
+--------------
+Local dev:    http://localhost:3000
+Recommended:  deploy via `vercel deploy --prod` (one click) — drop final URL here before submitting.
+
+ROUTES
+------
+/                       Landing — overview of all deliverables
+/login                  SSO mock (NUST CMS)
+/student/home           Student dashboard (mobile frame)
+/student/submit         New request flow (≤4 taps)
+/student/requests       Request history
+/student/requests/[id]  Live tracker · lifecycle · timeline · feedback
+/student/kb             Help center / knowledge base
+/student/notifications  Smart-grouped push log
+/student/profile        Profile + Qalam grades
+
+/staff/queue            Navigator queue (priority + SLA sort, AI confidence column)
+/staff/sla              SLA monitor — breach risk / watch / on track
+/staff/dashboard        Performance dashboard (KPIs, trends, AI insights)
+/staff/walkin           Walk-in intake form
+
+/design-system          Foundations & components
+/flows                  Three core user flows
+/rationale              Design rationale
