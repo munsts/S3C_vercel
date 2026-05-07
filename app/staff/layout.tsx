@@ -28,7 +28,7 @@ export default function StaffLayout({ children }: { children: React.ReactNode })
     setHydrated(true);
   }, []);
 
-  // staff notifications
+  // notifs
   const staffNotifications = requests.flatMap(r => [
     ...r.events.slice(-1).map(e => ({
       requestId: r.id,

@@ -26,7 +26,7 @@ export default function Dashboard() {
   const maxCat = Math.max(...PERF.byCategory.map(c => c.n));
   const total = trend.reduce((a: number, b: number) => a + b, 0);
 
-  // Find a high-risk request for the "Breach risk" section
+  // find risky
   const breachRequest = queue.find(r => r.status !== "resolved" && slaPct(r.elapsedHours, r.slaHours) >= 80);
 
   const handleEscalate = (id: string) => {
@@ -130,7 +130,7 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="relative flex items-end gap-1 sm:gap-3 h-48 sm:h-56 mt-8 ml-8">
-              {/* Grid lines */}
+              {/* grid */}
               <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
                 {[0, 1, 2, 3].map(i => (
                   <div key={i} className="w-full border-t border-line/40 relative">
@@ -146,10 +146,10 @@ export default function Dashboard() {
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  {/* Background track */}
+                  {/* bg */}
                   <div className="absolute inset-0 bg-navy-50/30 rounded-t-sm mx-0.5" />
                   
-                  {/* Actual bar */}
+                  {/* bar */}
                   <div 
                     className={cn(
                       "w-full rounded-t-md transition-all duration-500 ease-out relative z-10",
@@ -159,7 +159,7 @@ export default function Dashboard() {
                     style={{ height: `${(v / max) * 100}%` }} 
                   />
 
-                  {/* Tooltip */}
+                  {/* tooltip */}
                   {hoveredIndex === i && (
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 animate-in fade-in zoom-in-95 duration-200">
                       <div className="bg-navy-900 text-white px-2.5 py-1.5 rounded shadow-xl text-[11px] font-semibold whitespace-nowrap">

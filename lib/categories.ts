@@ -12,7 +12,7 @@ export interface CategoryMeta {
   icon: LucideIcon;
   directorate: string;
   examples: string[];
-  accent: string; // bg color
+  accent: string; // bg
   ring: string;
 }
 

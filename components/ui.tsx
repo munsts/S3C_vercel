@@ -38,7 +38,7 @@ export function SlaRing({ elapsed, total, size = 64 }: { elapsed: number; total:
   const tone = slaTone(pct);
   const remaining = Math.max(0, total - elapsed);
   
-  // Scale font sizes based on circle size
+  // scale font
   const mainFontSize = size < 40 ? "text-[9px]" : size < 50 ? "text-[10px]" : "text-[11.5px]";
   const labelFontSize = size < 40 ? "text-[6px]" : size < 50 ? "text-[7px]" : "text-[8.5px]";
 

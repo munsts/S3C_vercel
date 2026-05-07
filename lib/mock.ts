@@ -156,7 +156,7 @@ export const SCHEDULE: ClassEvent[] = [
   { course: "Business Communication", code: "MGT-163", room: "NBS-205", start: "13:00", end: "14:30", day: "Friday" },
 ];
 
-// staff queue data
+// staff queue
 export const STAFF_QUEUE: ServiceRequest[] = [
   ...REQUESTS,
   {
@@ -224,7 +224,7 @@ export const PERF = {
   csat: 4.6,
   weekTrend: [12, 18, 22, 19, 28, 31, 38],
   monthTrend: [22, 25, 19, 28, 31, 24, 20, 22, 25, 29, 33, 30, 28, 35, 38, 32, 29, 31, 34, 40, 42, 38, 35, 39, 41, 45, 48, 52, 50, 55],
-  quarterTrend: [180, 195, 210, 205, 220, 235, 250, 240, 260, 280, 275, 300], // weekly totals
+  quarterTrend: [180, 195, 210, 205, 220, 235, 250, 240, 260, 280, 275, 300], // weekly
   byCategory: [
     { cat: "academic", n: 96 },
     { cat: "finance", n: 72 },

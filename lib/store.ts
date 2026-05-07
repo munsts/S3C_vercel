@@ -17,7 +17,7 @@ export const useRequests = create<Store>()(
     (set) => ({
       requests: STAFF_QUEUE,
       add: (r) => set((s) => ({ requests: [r, ...s.requests] })),
-      update: (id, updates) => set((s) => ({
+          update: (id, updates) => set((s) => ({
         requests: s.requests.map(r => r.id === id ? { ...r, ...updates } : r)
       })),
       addMessage: (id, m) => set((s) => ({
@@ -34,7 +34,7 @@ export const useRequests = create<Store>()(
   )
 );
 
-// Tab synchronization
+// sync tabs
 if (typeof window !== "undefined") {
   window.addEventListener("storage", (e) => {
     if (e.key === "s3c-requests-storage") {

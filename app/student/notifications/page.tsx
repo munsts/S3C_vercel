@@ -18,7 +18,7 @@ export default function Notifications() {
 
   if (!hydrated) return null;
 
-  // Flatten all events from all requests into a single notification list
+  // merge all
   const notifications = requests.flatMap(r => [
     ...r.events.map(e => ({
       requestId: r.id,
