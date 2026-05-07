@@ -159,7 +159,6 @@ export default function HelpPage() {
           <p>© 2026 Student Support Services Centre · NUST</p>
           <div className="flex gap-6">
             <Link href="/about" className="hover:text-navy-900 transition">About</Link>
-            <Link href="/docs/flows" className="hover:text-navy-900 transition">Portal Guide</Link>
             <Link href="/" className="hover:text-navy-900 transition">Portal Login</Link>
           </div>
         </div>

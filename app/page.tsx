@@ -93,8 +93,6 @@ export default function Entry() {
           <footer className="mt-16 lg:mt-auto pt-8 border-t border-white/10 text-[11px] text-white/45 flex flex-wrap gap-x-6 gap-y-2">
             <span>© NUST 2026</span>
             <Link href="/about" className="hover:text-white/80">About</Link>
-            <Link href="/docs/design-system" className="hover:text-white/80">Design system</Link>
-            <Link href="/docs/flows" className="hover:text-white/80">User flows</Link>
             <a href="mailto:s3c@nust.edu.pk" className="hover:text-white/80">Contact</a>
           </footer>
         </section>
